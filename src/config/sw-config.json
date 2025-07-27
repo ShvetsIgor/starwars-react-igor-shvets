@@ -1,0 +1,40 @@
+{
+  "friends": [
+    {
+      "name": "R2-D2",
+      "img": "src/images/friend1.jpg"
+    },
+    {
+      "name": "pic2",
+      "img": "src/images/friend2.jpg"
+    },
+    {
+      "name": "pic3",
+      "img": "src/images/friend3.jpg"
+    },
+    {
+      "name": "pic4",
+      "img": "src/images/friend4.jpg"
+    },
+    {
+      "name": "pic5",
+      "img": "src/images/friend5.jpg"
+    },
+    {
+      "name": "pic6",
+      "img": "src/images/friend6.jpg"
+    },
+    {
+      "name": "pic7",
+      "img": "src/images/friend7.jpg"
+    },
+    {
+      "name": "pic8",
+      "img": "src/images/friend8.jpg"
+    },
+    {
+      "name": "pic9",
+      "img": "src/images/friend9.jpg"
+    }
+  ]
+}
