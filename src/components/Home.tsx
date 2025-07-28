@@ -3,7 +3,7 @@ import Gallery from "./Gallery.tsx";
 import FarGalaxy from "./FarGalaxy.tsx";
 
 
-const Main = () => {
+const Home = () => {
     return (
         <main>
             <Hero/>
@@ -13,4 +13,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default Home;
