@@ -25,7 +25,7 @@ class App extends Component<object, State> {
 
         return (
             <>
-                <Header changePage={this.changePage}/>
+                <Header changePage={this.changePage} page={this.state.page} />
                 <Main page={this.state.page}/>
                 <Footer/>
             </>
