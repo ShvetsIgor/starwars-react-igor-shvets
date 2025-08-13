@@ -1,70 +1,65 @@
 import info from "../config/sw-config.json"
 import Friend from "./Friend.tsx";
 import type {HeroInfo} from "../utils/sw-types";
-import {Component} from "react";
+// import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+import {SWContext} from "../utils/SWContext.ts";
+import {useContext} from "react";
 
-type State = {
-    selectedFriend: string | ""
-}
+// export const friends = info.friends; //!!!!
 
-class Gallery extends Component<object, State> {
+const Gallery = () => {
 
-    constructor(props: object) {
-        super(props);
-        this.state = {
-            selectedFriend: ""
-        }
+    // const [selectedFriend, setSelectedFriend] = useState<HeroInfo | string>("");
+
+    const navigate = useNavigate();
+    const {mainHero} = useContext(SWContext);
+    // const changePic = (friend: HeroInfo) => {
+    //     setSelectedFriend(prevState => prevState === friend.name ? "" : friend.name);
+    // };
+
+    const btnClick = (friend: HeroInfo) => {
+        navigate(`/home/${friend.id}`)
     }
 
-    changePic = (name: string) => {
-        this.setState((prevState) => ({
-            selectedFriend: prevState.selectedFriend === name ? "" : name
-        }));
-    };
-
-    renderAllFriends = () => {
+    const renderAllFriends = () => {
         return (
-            info.friends.map((friend: HeroInfo) =>
+            info.friends.filter(item => item.id !== mainHero).map((friend: HeroInfo) =>
                 <Friend
                     key={friend.name}
                     friend={friend}
                     isSelected={false}
-                    changePic={this.changePic}
+                    changePic={btnClick}
                 />
             )
         )
     }
 
-    renderChosenFriend = () => {
+    // const renderChosenFriend = () => {
+    //
+    //     const chosenFriend = info.friends.find(friend => friend.name === selectedFriend);
+    //     if (!chosenFriend) {
+    //         return "";
+    //     }
+    //
+    //     return (
+    //         <Friend
+    //             key={chosenFriend.name}
+    //             friend={chosenFriend}
+    //             isSelected={true}
+    //             changePic={btnClick}
+    //         />
+    //     )
+    // }
 
-        const chosenFriend = info.friends.find(friend => friend.name === this.state.selectedFriend);
-        if (!chosenFriend) {
-            return "";
-        }
-
-        return (
-            <Friend
-                key={chosenFriend.name}
-                friend={chosenFriend}
-                isSelected={true}
-                changePic={this.changePic}
-            />
-        )
-    }
-
-
-    render() {
-        return (
-            <section className="right">
-                <h3>Dream Team</h3>
-                <div className="gallery">
-                    {
-                        this.state.selectedFriend === "" ? this.renderAllFriends() : this.renderChosenFriend()
-                    }
-                </div>
-            </section>
-        );
-    }
+    return (
+        <section className="right">
+            <h3>Dream Team</h3>
+            <div className="gallery">
+                {renderAllFriends()}
+            </div>
+        </section>
+    );
 }
 
 export default Gallery;

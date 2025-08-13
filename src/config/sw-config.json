@@ -2,39 +2,63 @@
   "friends": [
     {
       "name": "R2-D2",
-      "img": "src/images/friend1.jpg"
+      "img": "src/images/friend1.jpg",
+      "id": "r2_d2",
+      "path": "peoples/3"
     },
     {
       "name": "C-3PO",
-      "img": "src/images/friend2.jpg"
+      "img": "src/images/friend2.jpg",
+      "id": "c-3po",
+      "path": "peoples/2"
     },
     {
-      "name": "Wicket W. Warrick",
-      "img": "src/images/friend3.jpg"
+      "name": "Ewok",
+      "img": "src/images/friend3.jpg",
+      "id": "ewok",
+      "path": "peoples/30"
     },
     {
       "name": "Chubacca",
-      "img": "src/images/friend4.jpg"
+      "img": "src/images/friend4.jpg",
+      "id": "chubacca",
+      "path": "peoples/13"
     },
     {
       "name": "Han Sol",
-      "img": "src/images/friend5.jpg"
+      "img": "src/images/friend5.jpg",
+      "id": "han_solo",
+      "path": "peoples/14"
     },
     {
       "name": "Lea",
-      "img": "src/images/friend6.jpg"
+      "img": "src/images/friend6.jpg",
+      "id": "lea",
+      "path": "peoples/5"
     },
     {
       "name": "Falcon Millenium",
-      "img": "src/images/friend7.jpg"
+      "img": "src/images/friend7.jpg",
+      "id": "millenium",
+      "path": "transports/10"
     },
     {
       "name": "Obi Van Kenobi",
-      "img": "src/images/friend8.jpg"
+      "img": "src/images/friend8.jpg",
+      "id": "kenobi",
+      "path": "peoples/10"
     },
     {
       "name": "Master Yoda",
-      "img": "src/images/friend9.jpg"
+      "img": "src/images/friend9.jpg",
+      "id": "yoda",
+      "path": "peoples/0"
+    },
+    {
+      "name": "Luke Skywalker",
+      "img": "src/images/main.jpg",
+      "id": "luke",
+      "path": "peoples/1"
     }
   ]
 }

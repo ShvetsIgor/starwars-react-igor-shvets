@@ -1,23 +1,27 @@
 import Navigation from "./Navigation.tsx";
-import type {FC} from "react";
+import {useMainHero} from "../utils/hooks.ts";
 
-type Props = {
-    changePage: (page: string) => void;
-    page: string;
-}
 
-const pageTitles: Record<string, string> = {
-    home: "Luke Skywalker",
-    aboutMe: "About Me",
-    contacts: "Contacts",
-    starWars: "Star Wars"
-};
 
-const Header: FC<Props> = ({changePage, page}) => {
+const Header = () => {
+
+    const mainHeroInfo = useMainHero();
+
+    // const location = useLocation(); // нашли полный адрес... /home
+    // const currentRoute = location.pathname.replace("/", "") || "home"; // path - это только /home, убираем /
+    //
+    // const currentItem = navItems.find(item => item.route === currentRoute); //ищем home в navItems
+    //
+    // const title =
+    //     currentRoute === "home"
+    //         ? "Luke Skywalker"
+    //         : currentItem?.title || "Page not found";
+
+
     return (
         <header>
-            <Navigation changePage={changePage}/>
-            <h1>{pageTitles[page.toLowerCase()] || page}</h1>
+            <Navigation/>
+            <h1>{mainHeroInfo!.name}</h1>
         </header>
     );
 };

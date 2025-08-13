@@ -1,17 +1,22 @@
-import * as React from "react";
+import type {FC} from "react";
+import {useNavigate} from "react-router-dom";
 
 
 type Props = {
-    text: string,
-    changePage: (page: string) => void;
+    element: { route: string, title: string },
 }
 
-const NavItem: React.FC<Props> = ({text, changePage}) => {
+const NavItem: FC<Props> = ({element}) => {
+
+    const navigate = useNavigate()
+
+
     return <li
-        onClick={() => {
-            changePage(text);
-        }}
-    >{text}</li>
+    onClick={() => {
+        navigate(element.route)
+    }}>
+        {element.title}
+    </li>
 };
 
 export default NavItem;

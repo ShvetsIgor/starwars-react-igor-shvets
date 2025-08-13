@@ -2,35 +2,24 @@ import './App.css'
 import Header from "./components/Header.tsx";
 import Footer from "./components/Footer.tsx";
 import Main from "./components/Main.tsx";
-import {Component} from "react";
+import {useState} from "react";
+import {SWContext} from "./utils/SWContext.ts";
 
-type State = {
-    page: string;
-}
 
-class App extends Component<object, State> {
 
-    constructor(props: object) {
-        super(props);
-        this.state = {
-            page: "Home"
-        }
-    }
 
-    changePage = (page: string) => {
-        this.setState({page: page})
-    }
 
-    render() {
+const App = () => {
 
-        return (
-            <>
-                <Header changePage={this.changePage} page={this.state.page} />
-                <Main page={this.state.page}/>
-                <Footer/>
-            </>
-        )
-    }
-}
+    const [mainHero, setMainHero] = useState('luke');
 
-export default App
+    return (
+        <SWContext.Provider value={{mainHero, setMainHero}}>
+            <Header />
+            <Main />
+            <Footer/>
+        </SWContext.Provider>
+    );
+};
+
+export default App;

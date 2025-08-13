@@ -7,11 +7,12 @@
 }
 body{
   background: url("src/images/sky.jpg"), black;
-  height: 100%;
+  /*height: 100%;*/
+  overflow: hidden;
 }
 
 header{
-  width: 100vw;
+  /*width: 100vw;*/
   text-align: center;
   background-color: rgba(69, 69, 69, 0.5);
   border-radius: 25px 25px 0 0;
@@ -23,7 +24,15 @@ nav ul li{
   padding: 0.3rem;
   background: rgb(200, 21, 54, 0.7);
   box-shadow: 0.2rem  0.2rem rgba(100, 100, 100, 0.3);
+  cursor: pointer;
 }
+
+nav ul li:hover{
+  background-color: rgb(200, 200, 54, 0.7);
+  color: white;
+  transform: scale(1.05);
+}
+
 nav{
   position: fixed;
   margin: 0;
@@ -55,7 +64,7 @@ ul{
 }
 .gallery img:hover{
   cursor: pointer;
-  transform: scale(1.01);
+  /*transform: scale(1.01);*/
 }
 .friendSmall{
   width: calc(100% / 3);
@@ -116,7 +125,7 @@ footer{
   flex-direction: column;
   align-content: space-between;
   justify-content: center;
-  height: 802px;
+  height: 830px;
   text-align: center;
   margin: 0;
   padding: 20px;
@@ -139,7 +148,7 @@ main {
 
 .starwarsInfo{
   display: flex;
-  height: 802px;
+  height: 830px;
   flex-direction: column;
   padding: 20px;
   font-size: 20px;
@@ -161,22 +170,24 @@ input[type=text], select, textarea {
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
   background-color: rgb(200, 21, 54, 0.7);
-  color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  color: #e5dc61;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: rgb(200, 200, 54, 0.7);
 }
 
 /* Add a background color and some padding around the form */
 .contact {
   border-radius: 5px;
   padding: 20px;
-  height: 802px;
+  height: 830px;
   width: 50%;
 }
