@@ -2,7 +2,6 @@ import {useEffect, useState} from "react";
 import {useMainHero} from "../utils/hooks.ts";
 import { friends } from "../utils/constants.ts";
 
-
 const AboutMe = () => {
 
     const [character, setCharacter] = useState({
@@ -21,6 +20,7 @@ const AboutMe = () => {
     const mainHeroInfo = useMainHero();
 
     const friendPath = friends.find(friend => mainHeroInfo!.id === friend.id)!.path;
+    const friendPic = friends.find(friend => mainHeroInfo!.id === friend.id)!.img;
 
     useEffect(() => {
         (async () => {
@@ -63,6 +63,7 @@ const AboutMe = () => {
         <div>
             <div className="aboutMe">
                 <div className="aboutMe persInfo" >
+                    <img src={`../${friendPic}`} alt={friendPic}/>
                     <h1>{character.name}, ID: {character.id}</h1>
                     <h2>from planet {planetName}</h2>
                     <span>Gender: {character.gender}</span>
@@ -74,6 +75,7 @@ const AboutMe = () => {
                     <span>Mass: {character.mass}</span>
                 </div>
             </div>
+
         </div>
     );
 };
